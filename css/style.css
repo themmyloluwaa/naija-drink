@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+
+:root{
+    --lightPurple: #6D326D;
+    --darkBlue: #060e57;
+    --yellow: rgb(242, 160, 80);
+    --brown: #382923;
+    --black: #191919;
+    --grey: #a9b2ac;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) url('../img/bricks-brickwall-brickwork-1092364.jpg');
+    color: var(--black);
+}
+/* global styles */
+.bell-fonts{
+    font-family: 'Lato', sans-serif;
+}
+/* end of global styles */
+
+/* header */
+.header{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 80%;
+    justify-content: center;
+    align-items: center;
+    position: relative; 
+}
+@media screen and (max-width: 768px){
+    .header{
+        background: url('../img/wine.jpg') center/cover fixed no-repeat;
+    }
+}
+/* banner */
+.banner{
+    text-align: center;
+    z-index: 3;
+}
+.banner-title{
+    font-size: 4rem;
+    text-transform: capitalize;
+    color: var(--lightPurple);
+}
+@media screen and (min-width: 768px){
+    .banner-title{
+        font-size: 9rem;
+    }
+}
+.banner-social-icon{
+    display: block;
+    text-decoration: none;
+    color: var(--black);
+    border: 0.1rem solid var(--black);
+    border-radius: 50%;
+    padding: 0.25rem;
+    transition: all 0.5s linear;
+}
+.banner-social-icon:hover{
+    background: var(--lightPurple);
+    color: var(--black);
+}
+
+.bannner-icons{
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 2rem);
+}
