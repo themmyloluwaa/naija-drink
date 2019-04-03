@@ -2,7 +2,7 @@
 
 :root{
     --lightPurple: #6D326D;
-    --darkBlue: #060e57;
+    --lightBlue: #6270f0;
     --yellow: rgb(242, 160, 80);
     --brown: #382923;
     --black: #191919;
@@ -68,10 +68,94 @@ body{
     background: var(--lightPurple);
     color: var(--black);
 }
-
 .bannner-icons{
     width: 50%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 2rem);
+    grid-column-gap: 0.5rem;
+    justify-content: center;
+}
+/* video */
+.video-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.video-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+/* start of nav button */
+.navBtn{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 3.5rem;
+    color: rgb(140, 6, 90);
+    cursor: pointer;
+    animation-name: pulse;
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+}
+/* nav button animation */
+@keyframes pulse{
+    0%{
+    transform: scale(1)
+    }
+    50%{
+    transform: scale(1.5)
+    }
+    100%{
+    transform: scale(1)
+    }
+}
+/* end of nav animation */
+/* nav link styling */
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10rem;
+    background: rgb(140, 6, 90);
+     z-index: 3;
+}
+.nav-links{
+    list-style-type: none;
+}
+.nav-single-link{
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #cecacc;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.5s ease-in-out;
+}
+.nav-single-link:hover{
+    background: var(--lightBlue);
+    padding-left: 1.5rem;
+}
+/* .nav-logo{
+    width: 7rem;
+} */
+.nav-logo:hover{
+    background: grey;
+}
+/* video switch  */
+.video-switch-container{
+    display: none;
+}
+@media screen and (min-width:768px){
+    .video-switch-container{
+        display: block;
+        position: absolute;
+        bottom: 5%;
+        right: 5%; 
+    }   
 }
