@@ -104,7 +104,7 @@ function eventL(){
             console.log(customer)
             
             ui.showFeedback('Good to go', 'success')
-            ui.clearFields();
+            ui.clearFields(); 
         }else{
             ui.showFeedback('some form value are empty', 'error');
         }
