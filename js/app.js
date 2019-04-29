@@ -66,6 +66,23 @@
         document.querySelector('.input-lastname').value = ''; 
         document.querySelector('.input-email').value = ''; 
     }
+    showModal(event){
+        event.preventDefault();
+        if(event.target.parentElement.classList.contains('work-item-icon')){
+            let dataId = event.target.parentElement.dataset.id;
+            const modal = document.querySelector('.work-modal');
+            const modelItem = document.querySelector('.work-modal-item');
+
+            modal.classList.add('work-modal-show');
+            modelItem.style.backgroundImage = `url(img/work${dataId}.jpg)`; 
+        }
+    }
+    closeModal(event){
+            if(event.target.parentElement.classList.contains('work-modal-close')){
+                const modal = document.querySelector('.work-modal');
+                modal.classList.remove('work-modal-show');
+            }
+    }
 }
 // contain video
 
@@ -109,6 +126,19 @@ function eventL(){
             ui.showFeedback('some form value are empty', 'error');
         }
         
+    })
+    // display modal
+    const links = document.querySelectorAll('.work-item-icon');
+
+    links.forEach((item)=>{
+        item.addEventListener('click', (event) =>{
+            ui.showModal(event);
+        })
+    })
+    // hide modal
+    const hide = document.querySelector('.fa-window-close');
+    hide.addEventListener('click', (event) =>{
+        ui.closeModal(event);
     })
 }
 

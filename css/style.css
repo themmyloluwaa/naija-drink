@@ -459,6 +459,9 @@ body{
 }
 /* modal */
 .work-modal{
+    display: none;
+}
+.work-modal-show{
     position: fixed;
     background: rgba(0, 0, 0, 0.5);
     top: 0;
@@ -468,10 +471,31 @@ body{
     z-index: 999;
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 }
 .work-modal-item{
     background: url("../img/work1.jpg")center/cover;
-    height: 70vh;
+    height: 70vh;  
     width: 80vw;
+    border: 0.5rem solid var(--lightPurple);
+    border-radius: 0.4rem; 
+}
+@media screen and (min-width:768px){
+    .work-model-item{
+        height: 80vh;
+        width: 60vw;
+    }
+}
+.work-modal-close{
+    position: fixed;
+    font-size: 3rem;
+    color: var(--lightPurple);
+    bottom: 5%;
+    right: 5%;
+    transition: color 0.5s linear; 
+    text-decoration: none;
+    display: inline-block;
+}
+.work-modal-close:hover{
+    color: red;
 }
